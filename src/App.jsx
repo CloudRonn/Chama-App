@@ -4,7 +4,6 @@ const App =() =>{
     return (
         <>
             <Home></Home>
-
         </>
     );
 
