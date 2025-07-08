@@ -8,7 +8,6 @@ a{
     display:flex;
     flex-direction: row;
     margin:5px;
-    background-color: aliceblue;
 }
 .navlinks{
     display: flex;
@@ -61,7 +60,14 @@ a{
   filter: blur(5px);
   pointer-events: none; /* Prevent interaction with blurred UI */
 }
-
+.background {
+  background-image: url('../assets/background3.jpg');
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+   width: 50%;
+  height: 80vh;
+}
 
 
 p{
