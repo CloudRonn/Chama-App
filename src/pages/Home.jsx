@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/Home.css';
 import Logo from '../assets/chama-logo.png';
 import Login from '../components/Login';
 
 const Home = () => {
+  const navigate= useNavigate();
   const [showLogin, setShowLogin] = useState(false);
 
   return (
@@ -33,7 +35,9 @@ const Home = () => {
       </div>
 
       <div className="hero-section">
-        <button className="createbutton">Create a Chama</button>
+         <button className="createbutton" onClick={() => navigate('/create-chama')}>
+            Create a Chama
+          </button>
         <button className="joinbutton">Join a Chama</button>
       </div>
 
