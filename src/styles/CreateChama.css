@@ -1,0 +1,59 @@
+.create-overlay{
+     background: rgb(223, 176, 115);
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(2px);
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+.create-container{
+ background: rgb(255, 255, 255);
+  padding: 30px;
+  width: 320px;
+  min-height: 500px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  position: relative;
+  z-index: 1000;
+}
+.back {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.create-container input[type="text"] {
+ 
+    font-size: 1.1rem;
+  padding: 12px 15px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+}
+.hero-btn {
+    margin-left: 3px;
+  padding: 15px;
+  background-color: #fd5f04;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size:1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+
+.hero-btn:hover {
+  background-color: #e76c25;
+}
