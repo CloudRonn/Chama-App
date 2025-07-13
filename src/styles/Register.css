@@ -1,9 +1,9 @@
-.login-overlay {
+.register-overlay {
   position: fixed;
   top: 0; left: 0;
   width: 100vw;
   height: 100vh;
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(1px);
   background: rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: center;
@@ -11,7 +11,7 @@
   z-index: 999;
 }
 
-.login-container {
+.register-container {
   background: white;
   padding: 30px;
   width: 320px;
@@ -24,7 +24,7 @@
   z-index: 1000;
 }
 
-.close-btn {
+.register-close-btn {
   position: absolute;
   top: 10px;
   right: 12px;
@@ -34,48 +34,46 @@
   cursor: pointer;
 }
 
-.login-header{
-
-    display: flex;
-    justify-content:center;
-    align-items:center;
+.register-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.login-input {
+.register-input {
   padding: 10px;
-  border: 2px solid #111111;
+  width:94%;
+  border: 2px solid #353535;
   border-radius: 20px;
   font-size: 16px;
+  margin-bottom:15px;
 }
 
-.login-submit {
+.register-submit {
   padding: 15px;
+  width:100%;
   background-color: #fd5f04;
   border: none;
   color: white;
   font-weight: bold;
-  font-size:1rem;
+  font-size: 1rem;
   border-radius: 25px;
   cursor: pointer;
 }
 
-.login-submit:hover {
+.register-submit:hover {
   background-color: #e76c25;
 }
 
-.forgot{
-  height:40px;
-}
-.forgot p{
-  font-size:1.2rem;
+.login-link {
+  font-size: 1.2rem;
+  text-align: center;
 }
 
-.register-link{
-  height:40px;
-  
-}
-
-.register-link h2{
-  font-size:1.2rem;
-  font-weight:normal;
+.register-error {
+  color: #ff2d2d;
+  font-size: 0.85rem;
+  text-align: center;
+  margin-top: -10px;
+  margin-bottom: 10px;
 }

@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
+import { Link , useNavigate } from 'react-router-dom';
 import '../styles/Home.css';
 import Logo from '../assets/chama-logo.png';
-import Login from '../components/Login';
 
 const Home = () => {
   const navigate= useNavigate();
-  const [showLogin, setShowLogin] = useState(false);
 
   return (
     <>
@@ -15,11 +13,11 @@ const Home = () => {
         <img src={Logo} alt="Chama Logo" className="logo" />
 
         <div className="navlinks">
-          <a href="#">How It Works</a>
-          <a href="#">Contact Us</a>
+          <Link to="/how-it-works">How It Works</Link>
+          <Link to="/contact">Contact Us</Link>
         </div>
 
-        <button className="loginbutton" onClick={() => setShowLogin(true)}>
+        <button className="loginbutton" onClick={() => navigate('/login')}>
           Login
         </button>
       </div>
@@ -40,9 +38,6 @@ const Home = () => {
           </button>
         <button className="joinbutton">Join a Chama</button>
       </div>
-
-
-      {showLogin && <Login closeLogin={() => setShowLogin(false)} />}
         </div>
     </>
   );
