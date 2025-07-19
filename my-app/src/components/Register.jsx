@@ -12,6 +12,7 @@ const Register = () => {
     password: '',
     confirm: ''
   });
+
   const [error, setError] = useState('');
 
   const handleChange = e =>
@@ -23,12 +24,34 @@ const Register = () => {
     if (Object.values(form).some(v => !v.trim())) {
       return setError('All fields are required');
     }
+
     if (form.password !== form.confirm) {
       return setError('Passwords do not match');
     }
 
     try {
-      console.log('REGISTER →', form);
+      const API = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+
+      const res = await fetch(`${API}/api/auth/register`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          phone: form.phone,
+          username: form.username,
+          email: form.email,
+          password: form.password
+        })
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.msg || 'Registration failed');
+      }
+
+      console.log('REGISTER →', data.msg);
       setForm({
         phone: '',
         username: '',
@@ -36,9 +59,10 @@ const Register = () => {
         password: '',
         confirm: ''
       });
+
       navigate('/login');
     } catch (err) {
-      setError('Registration failed, please try again.');
+      setError(err.message || 'Registration failed, please try again.');
     }
   };
 
@@ -102,7 +126,17 @@ const Register = () => {
 
         <p className="login-link">
           Already have an account?
-           <span onClick={() => navigate('/login')} style={{ color: '#fd5f04', cursor: 'pointer', fontWeight: 'normal' , fontSize:'1.2rem' }}>Login</span>
+          <span
+            onClick={() => navigate('/login')}
+            style={{
+              color: '#fd5f04',
+              cursor: 'pointer',
+              fontWeight: 'normal',
+              fontSize: '1.2rem'
+            }}
+          >
+            Login
+          </span>
         </p>
       </div>
     </div>
